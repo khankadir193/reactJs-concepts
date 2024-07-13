@@ -1,15 +1,26 @@
-import './App.css';
-import { useEffect, createContext } from 'react';
-import AppContext from './ContextApi/AppContext';
-import FirstContext from './ContextApi/FirstContext';
+import React, { useEffect } from 'react';
+import AppContext, { useApi } from './ContextApi/AppContext';
 
+const App = () => {
+  const { apiData, loading, fetchData } = useApi();
 
-function App() {
+  useEffect(() => {
+    fetchData();
+  }, [0]);
+
+  if (loading) return <div>Loading...</div>;
+  if (!apiData) return <div>No data available</div>;
+
   return (
-    <AppContext>
-      <FirstContext />
-    </AppContext>
+    <div>
+      <h1>Data from API</h1>
+      <pre>{JSON.stringify(apiData, null, 2)}</pre>
+    </div>
   );
-}
+};
 
-export default App;
+export default () => (
+  <AppContext>
+    <App />
+  </AppContext>
+);
