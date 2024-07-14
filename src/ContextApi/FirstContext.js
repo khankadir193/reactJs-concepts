@@ -2,13 +2,14 @@ import React from 'react';
 import { useApi } from './AppContext';
 
 const FirstContext = () => {
-    const { data, loading } = useApi();
+    const { data, loading, lbData } = useApi();
 
-    console.log('data...',data);
+    console.log('data...', data);
 
     return (
         <div>
-            {{data}}
+            <h2>first context component...</h2>
+            <pre>{JSON.stringify(lbData, null, 2)}</pre>
         </div>
     )
 }

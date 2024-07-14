@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react';
 import AppContext, { useApi } from './ContextApi/AppContext';
+import FirstContext from './ContextApi/FirstContext';
 
 const App = () => {
-  const { apiData, loading, fetchData } = useApi();
+  const { apiData, loading, fetchData,getTalentWeeklyPrev,lbData} = useApi();
 
   useEffect(() => {
     fetchData();
+    getTalentWeeklyPrev(2);
   }, [0]);
 
   if (loading) return <div>Loading...</div>;
@@ -13,8 +15,10 @@ const App = () => {
 
   return (
     <div>
-      <h1>Data from API</h1>
-      <pre>{JSON.stringify(apiData, null, 2)}</pre>
+      {/* <h1>Data from API</h1> */}
+      {/* <pre>{JSON.stringify(apiData, null, 2)}</pre> */}
+      {/* <pre>{JSON.stringify(lbData, null, 2)}</pre> */}
+      <FirstContext />
     </div>
   );
 };
