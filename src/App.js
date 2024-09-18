@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import AppContext, { useApi } from './ContextApi/AppContext';
 import FirstContext from './ContextApi/FirstContext';
 import RefPractice from './RefComp.js/RefPractice';
+import ClickCounter from './HOCComp/ClickCounter';
 
 const App = () => {
   const { apiData, loading, fetchData,getTalentWeeklyPrev,lbData} = useApi();
@@ -20,7 +21,8 @@ const App = () => {
       {/* <pre>{JSON.stringify(apiData, null, 2)}</pre> */}
       {/* <pre>{JSON.stringify(lbData, null, 2)}</pre> */}
       {/* <FirstContext /> */}
-      <RefPractice />
+      {/* <RefPractice /> */}
+      <ClickCounter />
     </div>
   );
 };
