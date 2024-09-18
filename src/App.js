@@ -4,6 +4,7 @@ import FirstContext from './ContextApi/FirstContext';
 import RefPractice from './RefComp.js/RefPractice';
 import ClickCounter from './HOCComp/ClickCounter';
 import HoverCounter from './HOCComp/HoverCounter';
+import HookComp from './CustomHook/HookComp';
 
 const App = () => {
   const { apiData, loading, fetchData,getTalentWeeklyPrev,lbData} = useApi();
@@ -13,8 +14,8 @@ const App = () => {
     getTalentWeeklyPrev(2);
   }, [0]);
 
-  if (loading) return <div>Loading...</div>;
-  if (!apiData) return <div>No data available</div>;
+  // if (loading) return <div>Loading...</div>;
+  // if (!apiData) return <div>No data available</div>;
 
   return (
     <div>
@@ -23,8 +24,12 @@ const App = () => {
       {/* <pre>{JSON.stringify(lbData, null, 2)}</pre> */}
       {/* <FirstContext /> */}
       {/* <RefPractice /> */}
-      <ClickCounter />
-      <HoverCounter />
+
+      {/* HOC(higher order component) example */}
+      {/* <ClickCounter /> */}
+      {/* <HoverCounter /> */}
+
+      <HookComp />
     </div>
   );
 };
