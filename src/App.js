@@ -3,6 +3,7 @@ import AppContext, { useApi } from './ContextApi/AppContext';
 import FirstContext from './ContextApi/FirstContext';
 import RefPractice from './RefComp.js/RefPractice';
 import ClickCounter from './HOCComp/ClickCounter';
+import HoverCounter from './HOCComp/HoverCounter';
 
 const App = () => {
   const { apiData, loading, fetchData,getTalentWeeklyPrev,lbData} = useApi();
@@ -23,6 +24,7 @@ const App = () => {
       {/* <FirstContext /> */}
       {/* <RefPractice /> */}
       <ClickCounter />
+      <HoverCounter />
     </div>
   );
 };

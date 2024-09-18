@@ -1,12 +1,14 @@
 import React from 'react';
+import withCounter from './withCounter';
 
-const HoverCounter = () => {
-  return (
-    <div>
-        <h2>HoverCounter</h2>
-        <button>HoverCount</button>
-    </div>
-  )
+const HoverCounter = (props) => {
+    const { count, incrementCount } = props;
+    return (
+        <div style={{textAlign:'center'}}>
+            <h2>{count}</h2>
+            <button onMouseOver={incrementCount}>HoverCount</button>
+        </div>
+    )
 }
 
-export default HoverCounter;
+export default withCounter(HoverCounter); // withCounter is a higher order component that adds a counter to the component it wraps.
