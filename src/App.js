@@ -6,6 +6,7 @@ import ClickCounter from './HOCComp/ClickCounter';
 import HoverCounter from './HOCComp/HoverCounter';
 import HookComp from './CustomHook/HookComp';
 import FactorialComp from './MemoHooks/FactorialComp';
+import ReactMemoComp from './MemoHooks/ReactMemoComp';
 
 const App = () => {
   const { apiData, loading, fetchData,getTalentWeeklyPrev,lbData} = useApi();
@@ -33,7 +34,10 @@ const App = () => {
       {/* Custom Hook example */}
       {/* <HookComp /> */}
 
-      <FactorialComp />
+      {/* useMemo example */}
+      {/* <FactorialComp /> */}
+      {/* React.memo HOC example */}
+      <ReactMemoComp />
 
     </div>
   );
