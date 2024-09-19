@@ -5,6 +5,7 @@ import RefPractice from './RefComp.js/RefPractice';
 import ClickCounter from './HOCComp/ClickCounter';
 import HoverCounter from './HOCComp/HoverCounter';
 import HookComp from './CustomHook/HookComp';
+import FactorialComp from './MemoHooks/FactorialComp';
 
 const App = () => {
   const { apiData, loading, fetchData,getTalentWeeklyPrev,lbData} = useApi();
@@ -29,7 +30,11 @@ const App = () => {
       {/* <ClickCounter /> */}
       {/* <HoverCounter /> */}
 
-      <HookComp />
+      {/* Custom Hook example */}
+      {/* <HookComp /> */}
+
+      <FactorialComp />
+
     </div>
   );
 };
