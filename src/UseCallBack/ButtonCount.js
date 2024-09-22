@@ -10,4 +10,4 @@ const ButtonCount = ({increment}) => {
   )
 }
 
-export default ButtonCount;// this is a functional component
+export default React.memo(ButtonCount);// this is a functional component
