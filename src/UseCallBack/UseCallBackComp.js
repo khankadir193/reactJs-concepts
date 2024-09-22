@@ -3,12 +3,11 @@ import ButtonCount from './ButtonCount';
 
 const UseCallBackComp = () => {
     const [counter, setCounter] = useState(0);
-    const [text, setText] = useState('');
 
-    const increment = () => {
+    const increment = useCallback(() => {
         console.log("Incremented");
-        setCounter(counter+1);
-    };
+        setCounter(prevCount => prevCount+1);
+    },[]);
     
     return (
         <div style={{ textAlign: 'center' }}>
