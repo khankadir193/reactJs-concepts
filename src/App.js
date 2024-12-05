@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { Suspense, useEffect } from 'react';
 import AppContext, { useApi } from './ContextApi/AppContext';
 import FirstContext from './ContextApi/FirstContext';
 import RefPractice from './RefComp.js/RefPractice';
@@ -8,13 +8,18 @@ import HookComp from './CustomHook/HookComp';
 import FactorialComp from './MemoHooks/FactorialComp';
 import ReactMemoComp from './MemoHooks/ReactMemoComp';
 import UseCallBackComp from './UseCallBack/UseCallBackComp';
+// import LazyLoadingComp from './LazyLoading/LazyLoadingComp';
+// const LazyComp = React.lazy(() => import('./LazyLoading/LazyLoadingComp'));
+
+// Lazy-loaded component
+const LazyComp = React.lazy(() => import('./LazyLoading/LazyLoadingComp'));
 
 const App = () => {
   const { apiData, loading, fetchData,getTalentWeeklyPrev,lbData} = useApi();
 
   useEffect(() => {
     fetchData();
-    getTalentWeeklyPrev(2);
+    // getTalentWeeklyPrev(2);
   }, [0]);
 
   // if (loading) return <div>Loading...</div>;
@@ -39,12 +44,17 @@ const App = () => {
       {/* <FactorialComp /> */}
       {/* React.memo HOC example */}
       {/* <ReactMemoComp /> */}
-      <UseCallBackComp />
+      {/* <UseCallBackComp /> */}
+      <h1>Learning Lazy Loading...!!!</h1>
+       {/* Using React.Suspense with a fallback */}
+       <Suspense fallback={<div>Loading Lazy Component...</div>}>
+        <LazyComp />
+      </Suspense>
 
     </div>
   );
 };
-
+// export default App;
 export default () => (
   <AppContext>
     <App />
