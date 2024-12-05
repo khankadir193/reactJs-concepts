@@ -8,6 +8,7 @@ import HookComp from './CustomHook/HookComp';
 import FactorialComp from './MemoHooks/FactorialComp';
 import ReactMemoComp from './MemoHooks/ReactMemoComp';
 import UseCallBackComp from './UseCallBack/UseCallBackComp';
+import CounterComp from './CallBackPractice/CounterComp';
 // import LazyLoadingComp from './LazyLoading/LazyLoadingComp';
 // const LazyComp = React.lazy(() => import('./LazyLoading/LazyLoadingComp'));
 
@@ -45,12 +46,15 @@ const App = () => {
       {/* React.memo HOC example */}
       {/* <ReactMemoComp /> */}
       {/* <UseCallBackComp /> */}
-      <h1>Learning Lazy Loading...!!!</h1>
+
+      {/* this is lazy load component example */}
        {/* Using React.Suspense with a fallback */}
+      {/* <h1>Learning Lazy Loading...!!!</h1>
        <Suspense fallback={<div>Loading Lazy Component...</div>}>
         <LazyComp />
-      </Suspense>
+      </Suspense> */}
 
+      <CounterComp />
     </div>
   );
 };
