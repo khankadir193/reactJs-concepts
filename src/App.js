@@ -9,6 +9,7 @@ import FactorialComp from './MemoHooks/FactorialComp';
 import ReactMemoComp from './MemoHooks/ReactMemoComp';
 import UseCallBackComp from './UseCallBack/UseCallBackComp';
 import CounterComp from './CallBackPractice/CounterComp';
+import CustomHookComp from './CallBackPractice/CustomHookComp';
 // import LazyLoadingComp from './LazyLoading/LazyLoadingComp';
 // const LazyComp = React.lazy(() => import('./LazyLoading/LazyLoadingComp'));
 
@@ -54,7 +55,10 @@ const App = () => {
         <LazyComp />
       </Suspense> */}
 
-      <CounterComp />
+      {/* counter component  */}
+      {/* <CounterComp /> */}
+
+      <CustomHookComp />
     </div>
   );
 };
