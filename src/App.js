@@ -11,6 +11,7 @@ import UseCallBackComp from './UseCallBack/UseCallBackComp';
 import CounterComp from './CallBackPractice/CounterComp';
 import CustomHookComp from './CallBackPractice/CustomHookComp';
 import HocApi from './HOCApiCall/HocApi';
+import ReadJsonObject from './Axios/ReadJsonObject';
 // import LazyLoadingComp from './LazyLoading/LazyLoadingComp';
 // const LazyComp = React.lazy(() => import('./LazyLoading/LazyLoadingComp'));
 
@@ -60,7 +61,9 @@ const App = () => {
       {/* <CounterComp /> */}
 
       {/* <CustomHookComp /> */}
-      <HocApi />
+      {/* <HocApi /> */}
+      <ReadJsonObject />
+      
     </div>
   );
 };
