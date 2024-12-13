@@ -52,17 +52,17 @@ const App = () => {
 
       {/* this is lazy load component example */}
        {/* Using React.Suspense with a fallback */}
-      {/* <h1>Learning Lazy Loading...!!!</h1>
+      <h1>Learning Lazy Loading...!!!</h1>
        <Suspense fallback={<div>Loading Lazy Component...</div>}>
         <LazyComp />
-      </Suspense> */}
+      </Suspense>
 
       {/* counter component  */}
       {/* <CounterComp /> */}
 
       {/* <CustomHookComp /> */}
       {/* <HocApi /> */}
-      <ReadJsonObject />
+      {/* <ReadJsonObject /> */}
       
     </div>
   );
