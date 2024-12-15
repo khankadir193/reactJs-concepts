@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { Suspense, useEffect } from 'react';
 import AppContext, { useApi } from './ContextApi/AppContext';
 import FirstContext from './ContextApi/FirstContext';
 import RefPractice from './RefComp.js/RefPractice';
@@ -9,13 +9,22 @@ import FactorialComp from './MemoHooks/FactorialComp';
 import ReactMemoComp from './MemoHooks/ReactMemoComp';
 import UseCallBackComp from './UseCallBack/UseCallBackComp';
 import CrudComp from './crudApp/CrudComp';
+import CounterComp from './CallBackPractice/CounterComp';
+import CustomHookComp from './CallBackPractice/CustomHookComp';
+import HocApi from './HOCApiCall/HocApi';
+import ReadJsonObject from './Axios/ReadJsonObject';
+// import LazyLoadingComp from './LazyLoading/LazyLoadingComp';
+// const LazyComp = React.lazy(() => import('./LazyLoading/LazyLoadingComp'));
+
+// Lazy-loaded component
+const LazyComp = React.lazy(() => import('./LazyLoading/LazyLoadingComp'));
 
 const App = () => {
   const { apiData, loading, fetchData,getTalentWeeklyPrev,lbData} = useApi();
 
   useEffect(() => {
     fetchData();
-    getTalentWeeklyPrev(2);
+    // getTalentWeeklyPrev(2);
   }, [0]);
 
   // if (loading) return <div>Loading...</div>;
@@ -41,11 +50,26 @@ const App = () => {
       {/* React.memo HOC example */}
       {/* <ReactMemoComp /> */}
       {/* <UseCallBackComp /> */}
+      {/* this is lazy load component example */}
+       {/* Using React.Suspense with a fallback */}
+      {/* <h1>Learning Lazy Loading...!!!</h1>
+       <Suspense fallback={<div>Loading Lazy Component...</div>}>
+        <LazyComp />
+      </Suspense> */}
+
+      {/* counter component  */}
+      {/* <CounterComp /> */}
+
+      {/* <CustomHookComp /> */}
+      {/* <HocApi /> */}
+      {/* <ReadJsonObject /> */}
+
       <CrudComp />
+      
     </div>
   );
 };
-
+// export default App;
 export default () => (
   <AppContext>
     <App />
