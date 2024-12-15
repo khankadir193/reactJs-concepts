@@ -14,7 +14,7 @@ const UseCallBackComp = () => {
             <h3>{counter}</h3>
             <ButtonCount increment={increment}/> 
         </div>
-    )
+    );
 };
 
 export default UseCallBackComp;

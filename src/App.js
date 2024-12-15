@@ -8,6 +8,7 @@ import HookComp from './CustomHook/HookComp';
 import FactorialComp from './MemoHooks/FactorialComp';
 import ReactMemoComp from './MemoHooks/ReactMemoComp';
 import UseCallBackComp from './UseCallBack/UseCallBackComp';
+import CrudComp from './crudApp/CrudComp';
 
 const App = () => {
   const { apiData, loading, fetchData,getTalentWeeklyPrev,lbData} = useApi();
@@ -39,8 +40,8 @@ const App = () => {
       {/* <FactorialComp /> */}
       {/* React.memo HOC example */}
       {/* <ReactMemoComp /> */}
-      <UseCallBackComp />
-
+      {/* <UseCallBackComp /> */}
+      <CrudComp />
     </div>
   );
 };

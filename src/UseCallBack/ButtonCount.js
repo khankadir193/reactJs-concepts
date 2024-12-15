@@ -8,6 +8,6 @@ const ButtonCount = ({increment}) => {
         <button onClick={increment}>click counter</button>
     </div>
   )
-}
+};
 
 export default React.memo(ButtonCount);// this is a functional component
