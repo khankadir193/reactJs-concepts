@@ -5,18 +5,22 @@ const CrudComp = () => {
     const [users, setUsers] = useState([{ id: 1, name: "John Doe", email: "john@example.com" },
     { id: 2, name: "Jane Smith", email: "jane@example.com" }]);
 
-    const [newUser, setNewUser] = useState({name:'',email:''});
+    const [newUser, setNewUser] = useState({ name: '', email: '' });
     const [editing, setEditingUser] = useState(null);
 
-    const handleAddUser = () => {
-
+    const handleAddUser = (event) => {
+        if (newUser.name && newUser.email) {
+            const newId = users.length > 0 ? users[users.length - 1].id + 1 : 1;
+            setUsers([...users,{id:newId,...newUser}]);
+            setNewUser({name:'',email:''});
+        }
     };
 
     const handleEdit = () => {
 
     };
 
-    
+
     const handleDelete = () => {
 
     };
@@ -27,8 +31,14 @@ const CrudComp = () => {
             {/* Add newUser */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '2vw' }}>
                 <h3>Add User</h3>
-                <input type='text' placeholder='Name' style={{ marginRight: '10px' }} />
-                <input type='text' placeholder='Email' style={{ marginRight: '10px' }} />
+                <input type='text' placeholder='Name' style={{ marginRight: '10px' }}
+                    value={newUser.name}
+                    onChange={(e) => setNewUser({ ...newUser, name: e.target.value })}
+                />
+                <input type='email' placeholder='Email' style={{ marginRight: '10px' }}
+                    value={newUser.email}
+                    onChange={(e) => setNewUser({ ...newUser, email: e.target.value })}
+                />
                 <button onClick={handleAddUser}>Add</button>
             </div>
             <div>
@@ -41,12 +51,12 @@ const CrudComp = () => {
                             {
                                 users?.map((user) => {
                                     return (
-                                        <li style={{display:'flex',gap:'2vw',alignItems:'center',justifyContent:'center'}}>
+                                        <li style={{ display: 'flex', gap: '2vw', alignItems: 'center', justifyContent: 'center' }}>
                                             <span>{user.name} ({user.email})</span>
                                             <button onClick={handleEdit}>Edit</button>
                                             <button onClick={handleDelete}>Delete</button>
                                         </li>
-                                        )
+                                    )
                                 })
                             }
                         </ul>
