@@ -21,8 +21,12 @@ const CrudComp = () => {
     };
 
 
-    const handleDelete = () => {
-
+    const handleDelete = (removeId) => {
+        console.log('id...delete...',removeId);
+        console.log('users....',users);
+        const newData = users.filter((usr)=> usr.id !== removeId);
+        console.log('newData....',newData);
+        setUsers(newData);
     };
 
     return (
@@ -54,7 +58,7 @@ const CrudComp = () => {
                                         <li style={{ display: 'flex', gap: '2vw', alignItems: 'center', justifyContent: 'center' }}>
                                             <span>{user.name} ({user.email})</span>
                                             <button onClick={handleEdit}>Edit</button>
-                                            <button onClick={handleDelete}>Delete</button>
+                                            <button onClick={()=> handleDelete(user.id)}>Delete</button>
                                         </li>
                                     )
                                 })
