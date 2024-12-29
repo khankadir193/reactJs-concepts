@@ -13,6 +13,7 @@ import CounterComp from './CallBackPractice/CounterComp';
 import CustomHookComp from './CallBackPractice/CustomHookComp';
 import HocApi from './HOCApiCall/HocApi';
 import ReadJsonObject from './Axios/ReadJsonObject';
+import PaginationComp from './Pagination/PaginationComp';
 // import LazyLoadingComp from './LazyLoading/LazyLoadingComp';
 // const LazyComp = React.lazy(() => import('./LazyLoading/LazyLoadingComp'));
 
@@ -64,7 +65,8 @@ const App = () => {
       {/* <HocApi /> */}
       {/* <ReadJsonObject /> */}
 
-      <CrudComp />
+      {/* <CrudComp /> */}
+      <PaginationComp />
       
     </div>
   );
