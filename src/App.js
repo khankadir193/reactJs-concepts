@@ -14,6 +14,7 @@ import CustomHookComp from './CallBackPractice/CustomHookComp';
 import HocApi from './HOCApiCall/HocApi';
 import ReadJsonObject from './Axios/ReadJsonObject';
 import PaginationComp from './Pagination/PaginationComp';
+import AutoComplete from './AutoCompleteSearchBar/AutoComplete';
 // import LazyLoadingComp from './LazyLoading/LazyLoadingComp';
 // const LazyComp = React.lazy(() => import('./LazyLoading/LazyLoadingComp'));
 
@@ -66,7 +67,9 @@ const App = () => {
       {/* <ReadJsonObject /> */}
 
       {/* <CrudComp /> */}
-      <PaginationComp />
+      {/* <PaginationComp /> */}
+
+      <AutoComplete />
       
     </div>
   );

@@ -1,0 +1,16 @@
+*{
+    background-color: wheat;
+    color: black;
+}
+
+.auto-complete-container{
+    margin-top: 4vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input{
+    padding: 2vw !important;
+    width: 40vw;
+}
