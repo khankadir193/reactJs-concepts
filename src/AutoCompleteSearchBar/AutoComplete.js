@@ -3,13 +3,11 @@ import "./autoComplete.css";
 
 const AutoComplete = () => {
   const [data, setData] = useState([]);
-  const [searchItem, setSearchItem] = useState('');
+  const [searchItem, setSearchItem] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await fetch(
-        "https://dummyjson.com/recipes/search?q=Margherita"
-      );
+      const result = await fetch(`https://dummyjson.com/recipes/search?q=${searchItem}`);
       const res = await result.json();
       setData(res.recipes || []);
       console.log("response...", res);
@@ -20,12 +18,12 @@ const AutoComplete = () => {
     return () => {
       console.log("cleanup function");
     };
-  }, [0]);
+  }, [0,searchItem]);
 
   // Filter data based on search term
-  const filteredData = data.filter((item) =>
-    item.name.toLowerCase().includes(searchItem.toLowerCase())
-  );
+  // const filteredData = data.filter((item) =>item.name.toLowerCase().includes(searchItem.toLowerCase()));
+  console.log('datea...',data);
+  console.log('searchItem...',searchItem)
 
   return (
     <div className="auto-complete-container">
@@ -35,14 +33,14 @@ const AutoComplete = () => {
         placeholder="search for item"
         onChange={(e) => setSearchItem(e.target.value)}
       />
-
-      {
-        filteredData.length > 0 ? (
-            filteredData.map((item)=> <span>{item.name}</span>)
+      {/* displaying data  */}
+      <ul>
+        {data.length > 0 && searchItem.length > 0 ? (
+          data.map((item) => <li>{item.name}</li>)
         ) : (
-            <span>Search Not Found</span>
-        )
-      }
+          <li>Search Not Found</li>
+        )}
+      </ul>
     </div>
   );
 };
