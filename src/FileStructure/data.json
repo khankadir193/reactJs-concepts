@@ -1,0 +1,7 @@
+[
+    {
+       "isLoading":"true",
+       "Src":"File",
+       "children":[{"name":"src","type":"folder","children":[{"name":"FileStructure","type":"folder","children":[{"name":"data.json","type":"file"}]}]}]
+    }
+]
