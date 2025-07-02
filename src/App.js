@@ -16,6 +16,7 @@ import ReadJsonObject from './Axios/ReadJsonObject';
 import PaginationComp from './Pagination/PaginationComp';
 import AutoComplete from './AutoCompleteSearchBar/AutoComplete';
 import PdfComponent from './PDFExample/PdfComponent';
+import ReducerComp from './ReducerExample/ReducerComp';
 // import LazyLoadingComp from './LazyLoading/LazyLoadingComp';
 // const LazyComp = React.lazy(() => import('./LazyLoading/LazyLoadingComp'));
 
@@ -72,7 +73,10 @@ const App = () => {
 
       {/* <AutoComplete /> */}
 
-      <PdfComponent />
+      {/* <PdfComponent /> */}
+
+      <ReducerComp />
+
 
       
     </div>
