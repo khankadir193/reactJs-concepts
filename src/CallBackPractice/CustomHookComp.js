@@ -9,8 +9,7 @@ const CustomHookComp = ()=> {
     if(loading)
         return <h1>loading......</h1>
 
-    console.log('data..',data);
-    
+
     return (
         <div>{JSON.stringify(data,null)}</div>
     );

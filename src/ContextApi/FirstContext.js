@@ -14,4 +14,4 @@ const FirstContext = () => {
     )
 }
 
-export default FirstContext
+export default FirstContext;

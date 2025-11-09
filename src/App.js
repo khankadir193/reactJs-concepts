@@ -17,6 +17,9 @@ import PaginationComp from './Pagination/PaginationComp';
 import { Provider } from 'react-redux';
 import store from './ReduxExample/Store';
 import CounterExample from './ReduxExample/CounterExample';
+import AutoComplete from './AutoCompleteSearchBar/AutoComplete';
+// import PdfComponent from './PDFExample/PdfComponent';
+import ReducerComp from './ReducerExample/ReducerComp';
 // import LazyLoadingComp from './LazyLoading/LazyLoadingComp';
 // const LazyComp = React.lazy(() => import('./LazyLoading/LazyLoadingComp'));
 
@@ -71,7 +74,15 @@ const App = () => {
       {/* <CrudComp /> */}
       {/* <PaginationComp /> */}
       {/* <CrudComp /> */}
+
+      {/* <AutoComplete /> */}
+
+      {/* <PdfComponent /> */}
+
+      {/* <ReducerComp /> */}
+
       <CounterExample /> 
+      
     </div>
   );
 };
