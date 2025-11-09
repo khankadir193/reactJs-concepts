@@ -14,6 +14,9 @@ import CustomHookComp from './CallBackPractice/CustomHookComp';
 import HocApi from './HOCApiCall/HocApi';
 import ReadJsonObject from './Axios/ReadJsonObject';
 import PaginationComp from './Pagination/PaginationComp';
+import { Provider } from 'react-redux';
+import store from './ReduxExample/Store';
+import CounterExample from './ReduxExample/CounterExample';
 // import LazyLoadingComp from './LazyLoading/LazyLoadingComp';
 // const LazyComp = React.lazy(() => import('./LazyLoading/LazyLoadingComp'));
 
@@ -66,14 +69,17 @@ const App = () => {
       {/* <ReadJsonObject /> */}
 
       {/* <CrudComp /> */}
-      <PaginationComp />
-      
+      {/* <PaginationComp /> */}
+      {/* <CrudComp /> */}
+      <CounterExample /> 
     </div>
   );
 };
 // export default App;
 export default () => (
   <AppContext>
+  {/* <Provider store={store}> */}
     <App />
+  {/* </Provider> */}
   </AppContext>
 );
