@@ -20,6 +20,7 @@ import CounterExample from './ReduxExample/CounterExample';
 import AutoComplete from './AutoCompleteSearchBar/AutoComplete';
 // import PdfComponent from './PDFExample/PdfComponent';
 import ReducerComp from './ReducerExample/ReducerComp';
+import BillingForm from './BillingApp/BillingComponent';
 // import LazyLoadingComp from './LazyLoading/LazyLoadingComp';
 // const LazyComp = React.lazy(() => import('./LazyLoading/LazyLoadingComp'));
 
@@ -81,7 +82,9 @@ const App = () => {
 
       {/* <ReducerComp /> */}
 
-      <CounterExample /> 
+      {/* <CounterExample />  */}
+
+      <BillingForm />
       
     </div>
   );

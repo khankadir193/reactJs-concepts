@@ -1,0 +1,11 @@
+.billing-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 1vw;
+}
+input {
+    /* border: 0; */
+    border-radius: 0;
+    padding: 1vw !important;
+}
