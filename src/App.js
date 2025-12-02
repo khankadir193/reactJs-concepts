@@ -21,6 +21,7 @@ import AutoComplete from './AutoCompleteSearchBar/AutoComplete';
 // import PdfComponent from './PDFExample/PdfComponent';
 import ReducerComp from './ReducerExample/ReducerComp';
 import BillingForm from './BillingApp/BillingComponent';
+import AccordionExample from './Accordion/AccordionExample';
 // import LazyLoadingComp from './LazyLoading/LazyLoadingComp';
 // const LazyComp = React.lazy(() => import('./LazyLoading/LazyLoadingComp'));
 
@@ -28,7 +29,26 @@ import BillingForm from './BillingApp/BillingComponent';
 const LazyComp = React.lazy(() => import('./LazyLoading/LazyLoadingComp'));
 
 const App = () => {
-  const { apiData, loading, fetchData,getTalentWeeklyPrev,lbData} = useApi();
+  const { apiData, loading, fetchData, getTalentWeeklyPrev, lbData } = useApi();
+
+  const items = [
+    {
+      title: "JavaScript Basics",
+      content: "Learn variables, functions, and loops in JavaScript."
+    },
+    {
+      title: "React.js Overview",
+      content: "Understand components, state, and props in React."
+    },
+    {
+      title: "Node.js",
+      content: "Basics of server-side development with Node.js."
+    },
+    {
+      title: "Full-Stack Development",
+      content: "Build full-stack apps with React and Node.js."
+    },
+  ];
 
   useEffect(() => {
     fetchData();
@@ -59,7 +79,7 @@ const App = () => {
       {/* <ReactMemoComp /> */}
       {/* <UseCallBackComp /> */}
       {/* this is lazy load component example */}
-       {/* Using React.Suspense with a fallback */}
+      {/* Using React.Suspense with a fallback */}
       {/* <h1>Learning Lazy Loading...!!!</h1>
        <Suspense fallback={<div>Loading Lazy Component...</div>}>
         <LazyComp />
@@ -84,16 +104,17 @@ const App = () => {
 
       {/* <CounterExample />  */}
 
-      <BillingForm />
-      
+      {/* <BillingForm /> */}
+      <AccordionExample data={items} />
+
     </div>
   );
 };
 // export default App;
 export default () => (
   <AppContext>
-  {/* <Provider store={store}> */}
+    {/* <Provider store={store}> */}
     <App />
-  {/* </Provider> */}
+    {/* </Provider> */}
   </AppContext>
 );
