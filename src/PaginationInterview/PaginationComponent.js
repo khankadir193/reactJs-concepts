@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 const PaginationComponent = () => {
   const [data, setData] = useState([]);
-  const [pageSize] = useState(10);
+  const [pageSize,setPageSize] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
   // const [page, setPage] = useState(0);
 
@@ -12,7 +12,7 @@ const PaginationComponent = () => {
       const res = await fetch('https://jsonplaceholder.typicode.com/posts/');
       const result = await res.json();
       console.log('---------', result);
-      setData([...result]);
+      setData(result);
     };
 
     fetchData();
@@ -32,16 +32,26 @@ const PaginationComponent = () => {
     <div>
       {
         getItemsData()?.map((item) => {
-          return <p key={item.userId}>{item?.title}</p>
+          return <p key={item.id}>{item?.title}</p>
         })
       }
-      <button onClick={() => setCurrentPage((prev) => prev - 1)}>Prev</button>
-      {
-        [...Array(totalPage)].map((_,index)=>{
-          return <button key={index + 1}>{index + 1}</button>
-        })
-      }
-      <button onClick={() => setCurrentPage((prev) => prev + 1)}>Next</button>
+      <div>
+        <button onClick={() => setCurrentPage((prev) => prev - 1)} disabled={currentPage === 1}>Prev</button>
+        {
+          [...new Array(totalPage)].map((_, index) => {
+            const pageNumber = index + 1;
+            return <button key={index + 1} onClick={() => setCurrentPage(pageNumber)}>{index + 1}</button>
+          })
+        }
+        <button onClick={() => setCurrentPage((prev) => prev + 1)} disabled={currentPage === totalPage}>Next</button>
+      </div>
+      <select value={pageSize} onChange={(e)=>setPageSize(e.target.value)}>
+        <option value=''>Select</option>
+        <option value='10'>10</option>
+        <option value='20'>20</option>
+        <option value='30'>30</option>
+      </select>
+
     </div>
   );
 };
