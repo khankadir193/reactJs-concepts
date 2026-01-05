@@ -22,6 +22,7 @@ import AutoComplete from './AutoCompleteSearchBar/AutoComplete';
 import ReducerComp from './ReducerExample/ReducerComp';
 import BillingForm from './BillingApp/BillingComponent';
 import AccordionExample from './Accordion/AccordionExample';
+import PaginationComponent from './PaginationInterview/PaginationComponent';
 // import LazyLoadingComp from './LazyLoading/LazyLoadingComp';
 // const LazyComp = React.lazy(() => import('./LazyLoading/LazyLoadingComp'));
 
@@ -105,7 +106,8 @@ const App = () => {
       {/* <CounterExample />  */}
 
       {/* <BillingForm /> */}
-      <AccordionExample data={items} />
+      {/* <AccordionExample data={items} /> */}
+      <PaginationComponent />
 
     </div>
   );
