@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import './accordion.css'
 
+//coding problem
+// https://namastedev.com/practice/accordion
+
 const AccordionExample = ({ data }) => {
     // const [isExpand,setIsExpand] = useState(false);
     // const [isContent,setIsContent] = useState([]);
